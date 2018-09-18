@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 66318e579fe0e919ec3049487e3869df850390a86bb22bca79d2887653168a3e
+-- hash: 7483479fa77170b8309c8918bd4a7a6e48679935198497f1a7a909126adff45c
 
 name:           stringly
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
     , either
     , exceptions
     , protolude
+    , registry
     , text
     , transformers-either
   default-language: Haskell2010
@@ -54,6 +55,7 @@ test-suite spec
     , hedgehog
     , hedgehog-corpus
     , protolude
+    , registry
     , stringly
     , tasty
     , tasty-discover

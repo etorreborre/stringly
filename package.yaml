@@ -31,6 +31,7 @@ dependencies:
   - either
   - exceptions
   - protolude
+  - registry
   - text
   - transformers-either
 
