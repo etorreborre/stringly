@@ -1,0 +1,56 @@
+name: stringly
+version: 0.1.0.0
+synopsis: invoke typed functions as stringly typed ones
+
+description: This library allows to put well-typed functions into a map
+             of functions using Text parameters and returning Text values
+             where there are 'Read' instances for the parameters and a 'Show'
+             instance for the result of a function
+
+maintainer: etorreborre@yahoo.com
+git: https://github.com/etorreborre/registry
+
+ghc-options: -Wall -fhide-source-paths -fprint-potential-instances -optP-Wno-nonportable-include-path
+
+default-extensions:
+ - FlexibleContexts
+ - FlexibleInstances
+ - LambdaCase
+ - MultiParamTypeClasses
+ - NoImplicitPrelude
+ - OverloadedStrings
+ - Rank2Types
+ - ScopedTypeVariables
+ - ScopedTypeVariables
+ - TupleSections
+ - TypeApplications
+ - TypeOperators
+
+dependencies:
+  - base >= 4.7 && < 5
+  - either
+  - exceptions
+  - protolude
+  - text
+  - transformers-either
+
+library:
+  source-dirs: src
+
+tests:
+  spec:
+    main: test.hs
+    source-dirs:
+      - test
+    dependencies:
+      - async
+      - hedgehog
+      - hedgehog-corpus
+      - stringly
+      - tasty
+      - tasty-discover
+      - tasty-hedgehog
+      - tasty-th
+      - text
+
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N -fno-warn-orphans -fno-warn-missing-signatures -optP-Wno-nonportable-include-path

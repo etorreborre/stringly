@@ -1,0 +1,64 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 66318e579fe0e919ec3049487e3869df850390a86bb22bca79d2887653168a3e
+
+name:           stringly
+version:        0.1.0.0
+synopsis:       invoke typed functions as stringly typed ones
+description:    This library allows to put well-typed functions into a map of functions using Text parameters and returning Text values where there are 'Read' instances for the parameters and a 'Show' instance for the result of a function
+maintainer:     etorreborre@yahoo.com
+build-type:     Simple
+cabal-version:  >= 1.10
+
+source-repository head
+  type: git
+  location: https://github.com/etorreborre/registry
+
+library
+  exposed-modules:
+      Data.Stringly
+      Data.Stringly.Internal.Reflection
+  other-modules:
+      Paths_stringly
+  hs-source-dirs:
+      src
+  default-extensions: FlexibleContexts FlexibleInstances LambdaCase MultiParamTypeClasses NoImplicitPrelude OverloadedStrings Rank2Types ScopedTypeVariables ScopedTypeVariables TupleSections TypeApplications TypeOperators
+  ghc-options: -Wall -fhide-source-paths -fprint-potential-instances -optP-Wno-nonportable-include-path
+  build-depends:
+      base >=4.7 && <5
+    , either
+    , exceptions
+    , protolude
+    , text
+    , transformers-either
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  other-modules:
+      Test.Data.StringlySpec
+      Test.Tasty.Extensions
+      Paths_stringly
+  hs-source-dirs:
+      test
+  default-extensions: FlexibleContexts FlexibleInstances LambdaCase MultiParamTypeClasses NoImplicitPrelude OverloadedStrings Rank2Types ScopedTypeVariables ScopedTypeVariables TupleSections TypeApplications TypeOperators
+  ghc-options: -Wall -fhide-source-paths -fprint-potential-instances -optP-Wno-nonportable-include-path -threaded -rtsopts -with-rtsopts=-N -fno-warn-orphans -fno-warn-missing-signatures -optP-Wno-nonportable-include-path
+  build-depends:
+      async
+    , base >=4.7 && <5
+    , either
+    , exceptions
+    , hedgehog
+    , hedgehog-corpus
+    , protolude
+    , stringly
+    , tasty
+    , tasty-discover
+    , tasty-hedgehog
+    , tasty-th
+    , text
+    , transformers-either
+  default-language: Haskell2010

@@ -1,0 +1,12 @@
+resolver: lts-12.5
+
+packages:
+- '.'
+
+extra-deps:
+  - transformers-either-0.1.1
+  - tasty-hedgehog-0.2.0.0
+
+flags: {}
+
+extra-package-dbs: []
